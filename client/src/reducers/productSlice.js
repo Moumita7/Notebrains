@@ -1,12 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-// let fetchData=async()=>{
-//     let res= await axios.get("http://localhost:5000/products")
-//     // console.log(res.data)
-//     return res.data
 
-//   }
 const API_URL = 'http://localhost:5000/products';
 // create
 export const AddProducts=createAsyncThunk(
@@ -75,23 +70,7 @@ const productSlice =createSlice({
         error:null
 
     },
-    // reducers:{
 
-    // }
-    // extraReducers:{
-    //     [AddProducts.pending]:(state)=>{
-    //         state.loading=true
-    //     },
-    //     [AddProducts.fulfilled]:(state,action)=>{
-    //         state.loading=false;
-    //         state.products.push(action.payload)
-    //     },
-    //     [AddProducts.rejected]:(state,action)=>{
-    //         state.loading=false;
-    //         state.products=action.payload;
-    //     },
-
-    // }
     extraReducers: (builder) => {
         builder
           .addCase(AddProducts.pending, (state) => {

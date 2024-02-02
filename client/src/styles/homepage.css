@@ -1,0 +1,8 @@
+.card-container {
+    transition: transform 0.2s; 
+  }
+  
+  .card-container:hover {
+    transform: scale(1.1); 
+  }
+  
