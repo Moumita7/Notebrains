@@ -37,7 +37,7 @@ export const showProducts=createAsyncThunk("showProduct",
     
 })
 
-// read
+// delete
 export const deleteProduct=createAsyncThunk("deleteProduct", 
     async (id) => {
         try {
@@ -50,6 +50,23 @@ export const deleteProduct=createAsyncThunk("deleteProduct",
        
     
 })
+
+// update
+export const updateProduct=createAsyncThunk("updateProduct", 
+async (data) => {
+  console.log("dtaaa ",data)
+  try {
+      const response = await axios.put(`${API_URL}/${data.id}`,data);
+      return response.data;
+  } catch (error) {
+      return error
+      
+  }
+ 
+}
+ 
+    
+)
 const productSlice =createSlice({
     name:"productsDetails",
     initialState:{
@@ -119,6 +136,21 @@ const productSlice =createSlice({
           state.loading=false;
                   state.products=action.payload;
         });
+
+           // update
+           builder
+           .addCase(updateProduct.pending, (state) => {
+             state.loading=true
+           })
+           .addCase(updateProduct.fulfilled, (state, action) => {
+             state.loading=false;
+         state.products=state.products.map((ele)=>
+         ele.id==action.payload.id ? action.payload :ele)
+           })
+           .addCase(updateProduct.rejected, (state, action) => {
+             state.loading=false;
+                     state.products=action.payload;
+           });
       },
 })
 

@@ -52,35 +52,44 @@ width={100}
 timeout={3000} // 3 secs
 />  */}
   return (
-    <div className="flex flex-wrap  gap-5">
+    <div className="flex flex-wrap  gap-10 pt-10 pl-10 bg-[#F5F5F5]">
        {/* <h1 className="text-3xl font-bold underline">
       Hello world!
     </h1> */}
     
     {
       products?.map((ele)=>(
-        <div  key={ele.id}  className="border w-[20%] h-[40%] ">
-        <img className="w-[100%]" src={ele.image} alt="" />
-        <h2>{ele.name}</h2>
-        <p>{ele.brand}</p>
-        <p>{ele.price}</p>
-        <div>
+        <div  key={ele.id}  className=" p-4 w-[20%] h-[30%] bg-white rounded overflow-hidden shadow-lg ">
+        <img className="w-full h-48 object-cover" src={ele.image} alt="" />
+        <div className=" flex flex-col items-center">
+
+
+        <Link to={`/products/${ele.id}`}><h2 className="font-bold text-xl mb-2">{ele.name}</h2></Link>
+        <p className="font-semibold text-l">{ele.brand}</p>
+        <p className="font-semibold text-l">$ {ele.price}</p>
+        {/* <div>
           <button>like</button>
           <button>Disloke</button>
-        </div>
-        <div>
-          <button onClick={()=>dispatch(deleteProduct(ele.id))}>Delete</button>
-        </div>
+        </div> */}
+        {/* <div className=" border flex gap-12 ">
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" onClick={()=>dispatch(deleteProduct(ele.id))}>Delete</button>
+          <Link to={`/products/${ele.id}/edit`}>  <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-8 rounded focus:outline-none focus:shadow-outline" >        edit</button></Link>
+        </div> */}
        
-        <Link to={`/products/${ele.id}`}>
+        {/* <Link to={`/products/${ele.id}`}>
         view
 
-        </Link>
-        <br />
-        <Link to={`/products/${ele.id}/edit`}>
+        </Link> */}
+        {/* <br /> */}
+        {/* <Link to={`/products/${ele.id}/edit`}>
         edit
 
-        </Link>
+        </Link> */}
+        </div>
+        <div className="  flex justify-between mt-2">
+          <button className="bg-[#F20000] hover:bg-red-600 text-white font-bold py-2 px-8 rounded focus:outline-none focus:shadow-outline" onClick={()=>dispatch(deleteProduct(ele.id))}>Delete</button>
+          <Link to={`/products/${ele.id}/edit`}>  <button className="bg-[#4AAA4D] hover:bg-green-700 text-white font-bold py-2 px-10 rounded focus:outline-none focus:shadow-outline" >        edit</button></Link>
+        </div>
         </div>
       ))
     }
