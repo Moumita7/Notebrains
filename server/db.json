@@ -27,6 +27,41 @@
       "price": 5000,
       "image": "https://contents.mediadecathlon.com/p2175064/a323df0c88381a47cf8c79a3a38aeb5f/p2175064.jpg?format=auto&quality=70&f=650x0",
       "id": "4"
+    },
+    {
+      "id": "889a",
+      "name": "Moumi",
+      "image": "https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg",
+      "price": "244",
+      "brand": "Nike"
+    },
+    {
+      "id": "b3d1",
+      "name": "priya",
+      "image": "https://m.media-amazon.com/images/I/61MlsWiXrML._UY575_.jpg",
+      "price": "34",
+      "brand": "Nike"
+    },
+    {
+      "id": "ce01",
+      "name": "kiron",
+      "image": "https://5.imimg.com/data5/SELLER/Default/2022/4/PP/JQ/JO/151793842/new-product-500x500.jpeg",
+      "price": "3",
+      "brand": "Nike"
+    },
+    {
+      "id": "056d",
+      "name": "Mou",
+      "image": "https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg",
+      "price": "44",
+      "brand": "Nike"
+    },
+    {
+      "id": "0f11",
+      "name": "Mou",
+      "image": "https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg",
+      "price": "4323",
+      "brand": "Nike"
     }
   ]
 }
